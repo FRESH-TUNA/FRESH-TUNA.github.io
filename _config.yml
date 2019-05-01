@@ -1,11 +1,12 @@
 # Site settings
-title: Project Pages
-description: "An Integrated Scientific Blogging Template"
+title: Tuna's Log
+description: "Tuna의 개발(삽질) 블로그"
 url: ""
+
 
 # Secondary Parameters
 baseurl: 
-header-img: img/home-bg.jpg
+header-img: img/home-bg.png
 headercolor: "#FFFFFF"
 logo: /project-pages/img/logos/Project-Pages-New-Logo-Inverted.png
 
