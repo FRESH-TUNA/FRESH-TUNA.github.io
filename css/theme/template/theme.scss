@@ -1,3 +1,4 @@
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
 // Base theme template for reveal.js
 
 /*********************************************
@@ -10,7 +11,7 @@ body {
 }
 
 .reveal {
-	font-family: $mainFont;
+	font-family: "Nanum Gothic", sans-serif;
 	font-size: $mainFontSize;
 	font-weight: normal;
 	letter-spacing: -0.02em;
