@@ -1,4 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Ubuntu:300,700,300italic,700italic);
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+ 
+
 /**
  * Blood theme for reveal.js
  * Author: Walther http://github.com/Walther
@@ -24,7 +27,7 @@ body {
   background-color: #2b2b2b; }
 
 .reveal {
-  font-family: Ubuntu, "sans-serif";
+  font-family: "Nanum Gothic", sans-serif;
   font-size: 36px;
   font-weight: normal;
   letter-spacing: -0.02em;
