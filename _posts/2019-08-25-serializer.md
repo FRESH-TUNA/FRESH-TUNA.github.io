@@ -3,6 +3,7 @@ layout: post
 title: "Django 시리얼라이저"
 author: "DONGWON KIM"
 meta: "Springfield"
+comments: true
 ---
 
 ## 1. 프롤로그
