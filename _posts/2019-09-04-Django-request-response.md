@@ -1,10 +1,11 @@
 ---
 layout: post
-title: "Django response"
+title: "Django response, reverse"
 author: "DONGWON KIM"
 meta: "Springfield"
 comments: true
 ---
+
 ## 1. HttpResponse
 모든 view는 요청에 대해 httpResponse를 반환하도록 설계해야 한다.
 
