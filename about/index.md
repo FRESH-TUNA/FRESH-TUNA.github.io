@@ -17,38 +17,41 @@ type: about
 ![Image Alt 텍스트](/img/about/floweryroad.jpg)
 # 풀꽃길
 ### 그날그날, 목적과 취향에 딱 맞는 꽃을 쉽게 알려주는 웹서비스<br/>
+### Django rest framework로 API 개발 및 react로 프론트엔드 전반 개발
 ### 2019 멋쟁이사자처럼 중앙 해커톤<br/>
 ### [http://floweryroad.herokuapp.com](http://floweryroad.herokuapp.com)
-<br/>
+<!-- <br/>
 ## Frontend
 #### React와 Redux로 프론트엔드 전반 개발
 
-## Backend
+<!-- ## Backend
 #### Django rest framework로 API 개발
 #### Docker, nginx, uwsgi, postgres 를 활용하여 ec2 환경에 배포
-#### API서버: ec2-15-164-30-120.ap-northeast-2.compute.amazonaws.com
+#### API서버: ec2-15-164-30-120.ap-northeast-2.compute.amazonaws.com --> -->
 <br/><br/>
 
 
 ![Image Alt 텍스트](/img/about/jokjebi.jpg)
 # 족제비
 ### 모두를 위한 대학교 족보 공유 웹서비스
+### Django rest framework로 API 개발 및 vue로 프론트엔드 개발
 ### 2019 OPENHACK
 ### [https://jokebi.herokuapp.com](https://jokebi.herokuapp.com)
-<br/>
+<!-- <br/>
 ## Backend 
 #### django rest framework로 api 개발
 
 ## Frontend 
-#### vue.js와 vuex로 프론트 개발
+#### vue.js와 vuex로 프론트 개발 -->
 <br/><br/>
 
 ![Image Alt 텍스트](/img/about/teleguest.jpg)
 # 텔레게스트
 ### 같은 관심사를 가진 사람들의 공동 게스트하우스 예약 웹서비스<br/>
+### Django로 풀스택 개발
 ### 2019 NEWBIETON 구름(주) 특별상
 ### [https://teleguest.herokuapp.com](https://teleguest.herokuapp.com)
-<br/>
+<!-- <br/>
 ## Backend & Frontend
-#### Django로 풀스택 개발
+#### Django로 풀스택 개발 -->
 <br/><br/>
