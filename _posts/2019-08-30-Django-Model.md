@@ -52,3 +52,15 @@ class Test4Config(AppConfig):
 
 ```
 <br><br>
+
+## 2. One to One Model
+모델에 대해 추가적인 정보를 저장하고 싶지만 핵심적인 내용은 아닐때 일대일 대응 관계를 사용한다.
+One-to-one 모델의 역참조는 하나의 model obejct를 반환하지만, ForeignKey의 역참조는 QuerySet 을 반환하는 점이 차이점이다.
+ForeignKey(모델이름, unique=True)로도 unique-field를 쓸수 있지만 queryset을 써야하기때문에 그냥 onetoonefield 쓰자 
+
+Django에서는 사용자 Entity를 구현하는 방법이 3가지가 있는데 하나는 주어진대로 사용하기, 
+둘째는 custom user model 만들기, 셋째는 one to one model로 주어진대에 덧붙여 사용하는방법이다.
+
+## 3. 참고한 자료
+https://cjh5414.github.io/extending-user-model-using-one-to-one-link/
+https://cjh5414.github.io/extending-user-model-using-one-to-one-link/
