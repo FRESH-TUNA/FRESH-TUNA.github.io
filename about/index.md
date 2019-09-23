@@ -12,7 +12,7 @@ type: about
 #### 멋쟁이사자처럼 7기 (2019년 3월 ~)
 <br/><br/><br/><br/>
 
-# I made ...
+# I made ... 
 <br/>
 ![Image Alt 텍스트](/img/about/floweryroad.jpg)
 # 풀꽃길
@@ -50,6 +50,16 @@ type: about
 ### 같은 관심사를 가진 사람들의 공동 게스트하우스 예약 웹서비스<br/>
 ### 2019 NEWBIETON 구름(주) 특별상
 ### [https://teleguest.herokuapp.com](https://teleguest.herokuapp.com)
+<!-- Django로 프론트엔드, 백엔드를 모두 개발했습니다 -->
+<!-- <br/>
+## Backend & Frontend
+#### Django로 풀스택 개발 -->
+<br/><br/>
+
+![Image Alt 텍스트](/img/about/knufestival.jpg)
+# 머동머동
+### 2019 강원대학교 축제 사이트, 머동머동<br/>
+### [https://knufesta2019.du](https://knufesta2019.du)
 <!-- Django로 프론트엔드, 백엔드를 모두 개발했습니다 -->
 <!-- <br/>
 ## Backend & Frontend
