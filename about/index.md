@@ -17,7 +17,7 @@ type: about
 ![Image Alt 텍스트](/img/about/floweryroad.jpg)
 # 풀꽃길
 ### 그날그날, 목적과 취향에 딱 맞는 꽃을 쉽게 알려주는 웹서비스
-### [http://floweryroad.s3-website.ap-northeast-2.amazonaws.com/](http://floweryroad.s3-website.ap-northeast-2.amazonaws.com/)
+#### [http://floweryroad.s3-website.ap-northeast-2.amazonaws.com/](http://floweryroad.s3-website.ap-northeast-2.amazonaws.com/)
 <!-- #### Django rest framework로 API을 공동으로 개발 했습니다.<br> Docker, nginx, uwsgi, postgres 를 활용하여 ec2 환경에 배포<br>react와 redux를 활용하여 프론트엔드를 혼자 개발했습니다. -->
 
 <!-- <br/>
@@ -59,7 +59,8 @@ type: about
 ![Image Alt 텍스트](/img/about/knufestival.jpg)
 # 머동머동
 ### 2019 강원대학교 축제 사이트, 머동머동<br/>
-### [https://knufesta2019.du](https://knufesta2019.du)
+### 3일간 접속자수 약 7700명 
+### [https://knufesta2019.de](https://knufesta2019.de)
 <!-- Django로 프론트엔드, 백엔드를 모두 개발했습니다 -->
 <!-- <br/>
 ## Backend & Frontend
