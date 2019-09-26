@@ -13,6 +13,24 @@ DRF가 제공하는 Viewset을 활용하면 APIView와 달리 router와 filter c
 쪼개고 쪼개라고 했던가. GenericView와 직접 제작한 mixin들을 상속하여 viewset을 만들면 로직을 역활별로 정리할수 
 있다.<br/><br/>
 
+## 2. ViewSet과 GenericViewSet이란 무엇인가?
+하나의 모델에 대한 컨트롤러(뷰)들을 하나의 클래스로 모아서 사용할수 있도록 해준다.
+ViewSet은 APIView를 상속하여 APIView의 필드와 메소드를 그대로 쓰거나 재정의해서 사용하기때문에 APIView의
+작동원리를 그대로 계승한다. <br/>
+
+GenericViewSet는 DRF가 기본으로 제공하는 편리한 제네릭 ViewSet을 제공하기 위한 기반 클래스이다.
+ViewSet은 GenericAPIView를 상속하기 때문에 get_queryset, get_object, paginated response등의
+기능을 그대로 계승한다.  <br/>
+
+개인적으로  GenericViewSet이나 GenericAPIView는 filter_backend와 paginate 등 기능별로 모듈화가 잘되어있어,
+APIview, genericAPIVIew, viewset를 모두 공부 했다면 GenericViewSet를 적절히 고쳐 활용하는것을 추천해주고 싶다.
+
+## 3. ViewSet과 APIView와 다른점은 무엇인가?
+### 1. ViewSet은 Router와 연계하여 편리한 url mapping이 가능하다
+### 2. ViewSet은 APIView와 달리 extra_action을 삽입할수 있다.
+### 3. ViewSet은 APIView와 달리 컨트롤러 메소드의 이름을 http method의 이름으로 사용하지 않는다.
+
+
 ## 2. 시나리오
 꽃들에 대한 댓글들을 반환하고, 꽃에 대한 댓글을 작성할수 있는 Viewset을 mixin을 이용해 분리하여
 깔끔하게 만들어보자

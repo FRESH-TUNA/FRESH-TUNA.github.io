@@ -19,12 +19,19 @@ router.register(r'purposes', PurposeViewSet, basename='purpose')
 router.register(r'colors', ColorViewSet, basename='color')
 urlpatterns = router.urls
 ```
-
 router.register 첫번째 인자인 prefix는 url에 들어갈 자원의 이름으로 지정하면 되고
 두번째 인자로는 viewset을 넣어주면 된다. 세번째 인자의 경우 django에서사용하는 path name 처럼 
 view에 이름을 지정해줄수 있다. 공란으로 남겨두면 viewset을 참고하여 자동으로 생성되지만, viewset에
 queryset이 반드시 지정되어아한다.
 trailing_slash 옵션을 통해서 url의 끝에 / 를 붙일지 말지 결정할수 있다.
+
+```python
+urlpatterns = [
+    url(r'^api/', include((router.urls, 'app_name'))),
+]
+```
+이런식으로 application 스페이스를 주는것이 가능하다. 이는 나중에 view_name='app_name:user-detail'
+식으로 하이퍼링크 시리얼라이저에 사용된다.
 
 ## 3. NestedSimpleRouter
 만약 flowers/1/comments 처럼 nested 되어있을때는 어떻게 해야할까
