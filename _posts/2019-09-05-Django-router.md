@@ -51,3 +51,24 @@ def get_queryset(self):
     return Comment.objects.filter(flower=flower).order_by('-created_at')
 ```
 register 시에는 첫번째로 인자로 자식의 prefix, 두번째로 viewset, 세번째인자로 함수의 이름을 지정한다.
+
+## 4. 수제 router ?!
+```python
+from rest_framework.routers import Route, SimpleRouter
+
+class FlowerCommentRouter(SimpleRouter):
+    routes = [
+        Route(
+            url=r'^flowers/{lookup}/{prefix}$',
+            mapping={'get': 'list', 'post': 'create'},
+            name='{basename}-list',
+            detail=False,
+            initkwargs={'suffix': 'List'}
+        ),
+    ]
+
+comments_router = FlowerCommentRouter(trailing_slash=False)
+comments_router.register(r'comments', CommentFlowerViewSet, basename='comments')
+```
+NestedSimpleRouter를 사용해도 되지만 router를 위와 같이 커스터마이즈에서 사용할수도 있다!
+

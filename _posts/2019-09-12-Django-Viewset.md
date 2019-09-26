@@ -19,8 +19,8 @@ ViewSet은 APIView를 상속하여 APIView의 필드와 메소드를 그대로 �
 작동원리를 그대로 계승한다. <br/>
 
 GenericViewSet는 DRF가 기본으로 제공하는 편리한 제네릭 ViewSet을 제공하기 위한 기반 클래스이다.
-ViewSet은 GenericAPIView를 상속하기 때문에 get_queryset, get_object, paginated response등의
-기능을 그대로 계승한다.  <br/>
+ViewSet은 GenericAPIView를 상속하기 때문에 lookup_field, get_queryset, get_object, 
+paginated response등의 기능을 그대로 계승한다.  <br/>
 
 개인적으로  GenericViewSet이나 GenericAPIView는 filter_backend와 paginate 등 기능별로 모듈화가 잘되어있어,
 APIview, genericAPIVIew, viewset를 모두 공부 했다면 GenericViewSet를 적절히 고쳐 활용하는것을 추천해주고 싶다.
