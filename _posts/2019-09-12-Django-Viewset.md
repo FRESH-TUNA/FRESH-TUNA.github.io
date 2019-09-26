@@ -26,9 +26,9 @@ ViewSet은 GenericAPIView를 상속하기 때문에 get_queryset, get_object, pa
 APIview, genericAPIVIew, viewset를 모두 공부 했다면 GenericViewSet를 적절히 고쳐 활용하는것을 추천해주고 싶다.
 
 ## 3. ViewSet과 APIView와 다른점은 무엇인가?
-### 1. ViewSet은 Router와 연계하여 편리한 url mapping이 가능하다
-### 2. ViewSet은 APIView와 달리 extra_action을 삽입할수 있다.
-### 3. ViewSet은 APIView와 달리 컨트롤러 메소드의 이름을 http method의 이름으로 사용하지 않는다.
+##### 1. ViewSet은 Router와 연계하여 편리한 url mapping이 가능하다
+##### 2. ViewSet은 APIView와 달리 extra_action을 삽입할수 있다.
+##### 3. ViewSet은 APIView와 달리 컨트롤러 메소드의 이름을 http method의 이름으로 사용하지 않는다.
 
 
 ## 2. 시나리오
