@@ -3,6 +3,7 @@ layout: post
 title: "Docker로 Django 개발환경 구축하기"
 author: "DONGWON KIM"
 meta: "Springfield"
+categories: "CI/CD"
 comments: true
 ---
 

@@ -3,6 +3,7 @@ layout: post
 title: "DRF Viewset 과 mixin을 활용하여 깔끔하게 모듈화해보기"
 author: "DONGWON KIM"
 meta: "Springfield"
+categories: "Django"
 comments: true
 ---
 

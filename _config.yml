@@ -233,8 +233,8 @@ social_icons:
 
 
 # Sidebar Avatar
-# in directory: /assets/images/avatar.gif
-#avatar:
+# in directory: /assets/images/me.jpeg
+avatar: /assets/images/me.jpeg
 
 
 # Table Of Contents in the Sidebar
@@ -242,7 +242,7 @@ toc:
   enable: true
 
   # Automatically add list number to toc.
-  number: true
+  number: false
 
   # If true, all words will placed on next lines if header width longer then sidebar width.
   wrap: false

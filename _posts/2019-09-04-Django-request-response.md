@@ -3,6 +3,7 @@ layout: post
 title: "Django response, reverse"
 author: "DONGWON KIM"
 meta: "Springfield"
+categories: "Django"
 comments: true
 ---
 

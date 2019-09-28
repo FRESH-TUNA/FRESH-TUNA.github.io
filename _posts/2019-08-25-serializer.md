@@ -3,6 +3,7 @@ layout: post
 title: "Django 시리얼라이저"
 author: "DONGWON KIM"
 meta: "Springfield"
+categories: "Django"
 comments: true
 ---
 
