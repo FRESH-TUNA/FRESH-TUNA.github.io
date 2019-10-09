@@ -67,7 +67,10 @@ RUN     /root/.pyenv/versions/floweryroad/bin/pip install -r /app/web/requiremen
 위에서 만든 django_base 이미지를 바탕으로 개발에 필요한 이미지인<br/>lunacircle4/floweryroad-backend:develop 를 만든다.
 django_base 이미지에 개발에 필요한 가상환경및 파이썬 모듈들을 설치하여 개발을 위한 이미지가 생성된다.
 이미지 이름앞에 lunacircle4/를 붙여서 개발이 끝난후 docker hub에 push 할수 있게 하였다.
-개발중에 
+개발중에 새로운모듈을 설치하여 변경사항이 생기면 아래의 명령어를 통해 이미지를 커밋할수 있다!!
+```bash
+docker commit CONTAINER_NAME lunacircle4/floweryroad-backend:develop
+```
 
 ### 3. docker-compose로 개발 진행하기 
 ```bash
