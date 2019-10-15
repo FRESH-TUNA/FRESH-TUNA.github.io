@@ -10,6 +10,7 @@ type: about
 #### 우리말소프트 하계인턴 (2018년 6월 ~ 2018년 8월)
 #### Twisted Forge Studios 동계인턴 (2019년 1월 ~ 2019년 2월)
 #### 멋쟁이사자처럼 7기 (2019년 3월 ~)
+#### KB국민은행 진로체험캠프 프로그래밍 메인멘토 (2019년 10월 12일)
 <br/><br/><br/><br/>
 
 # I made ... 
@@ -31,10 +32,21 @@ type: about
 <br/><br/>
 
 
+![Image Alt 텍스트](/img/about/knufestival.jpg)
+# 머동머동
+### 2019 강원대학교 축제 사이트, 머동머동<br/>
+### 3일간 접속자수 약 7700명 
+### [https://www.knufesta2019.de](https://www.knufesta2019.de)
+<!-- Django로 프론트엔드, 백엔드를 모두 개발했습니다 -->
+<!-- <br/>
+## Backend & Frontend
+#### Django로 풀스택 개발 -->
+<br/><br/>
+
 ![Image Alt 텍스트](/img/about/jokjebi.jpg)
 # 족제비
 ### 모두를 위한 대학교 족보 공유 웹서비스
-### [https://jokebi.herokuapp.com](https://jokebi.herokuapp.com)
+### [http://34.85.77.156/](http://34.85.77.156/)
 <!-- ### Django rest framework로 API 개발 및 vue로 프론트엔드 개발 -->
 
 <!-- <br/>
@@ -50,17 +62,6 @@ type: about
 ### 같은 관심사를 가진 사람들의 공동 게스트하우스 예약 웹서비스<br/>
 ### 2019 NEWBIETON 구름(주) 특별상
 ### [https://teleguest.herokuapp.com](https://teleguest.herokuapp.com)
-<!-- Django로 프론트엔드, 백엔드를 모두 개발했습니다 -->
-<!-- <br/>
-## Backend & Frontend
-#### Django로 풀스택 개발 -->
-<br/><br/>
-
-![Image Alt 텍스트](/img/about/knufestival.jpg)
-# 머동머동
-### 2019 강원대학교 축제 사이트, 머동머동<br/>
-### 3일간 접속자수 약 7700명 
-### [https://www.knufesta2019.de](https://www.knufesta2019.de)
 <!-- Django로 프론트엔드, 백엔드를 모두 개발했습니다 -->
 <!-- <br/>
 ## Backend & Frontend
