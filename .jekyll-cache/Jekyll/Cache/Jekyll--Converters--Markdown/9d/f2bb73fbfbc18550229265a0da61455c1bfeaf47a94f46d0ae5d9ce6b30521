@@ -1,0 +1,62 @@
+I"1 <h2 id="1-django-router-란">1. Django Router 란</h2>
+<p>Django rest framework를 사용하면 Json object로 decode하거나 object를 json으로 encode 해야하는
+수고를 덜어준다. django-router는 drf가 제공하는 viewset과 연계하여 url의 하드코딩을 막을수 있는 신박한녀석
+이라 볼수 있다.</p>
+
+<h2 id="2-기본적인-사용법">2. 기본적인 사용법</h2>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">router</span> <span class="o">=</span> <span class="n">DefaultRouter</span><span class="p">(</span><span class="n">trailing_slash</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="n">router</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="s">r'flowers'</span><span class="p">,</span> <span class="n">FlowerViewSet</span><span class="p">,</span> <span class="n">basename</span><span class="o">=</span><span class="s">'flower'</span><span class="p">)</span>
+<span class="n">router</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="s">r'purposes'</span><span class="p">,</span> <span class="n">PurposeViewSet</span><span class="p">,</span> <span class="n">basename</span><span class="o">=</span><span class="s">'purpose'</span><span class="p">)</span>
+<span class="n">router</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="s">r'colors'</span><span class="p">,</span> <span class="n">ColorViewSet</span><span class="p">,</span> <span class="n">basename</span><span class="o">=</span><span class="s">'color'</span><span class="p">)</span>
+<span class="n">urlpatterns</span> <span class="o">=</span> <span class="n">router</span><span class="o">.</span><span class="n">urls</span>
+</code></pre></div></div>
+<p>router.register 첫번째 인자인 prefix는 url에 들어갈 자원의 이름으로 지정하면 되고
+두번째 인자로는 viewset을 넣어주면 된다. 세번째 인자의 경우 django에서사용하는 path name 처럼 
+view에 이름을 지정해줄수 있다. 공란으로 남겨두면 viewset을 참고하여 자동으로 생성되지만, viewset에
+queryset이 반드시 지정되어아한다.
+trailing_slash 옵션을 통해서 url의 끝에 / 를 붙일지 말지 결정할수 있다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">url</span><span class="p">(</span><span class="s">r'^api/'</span><span class="p">,</span> <span class="n">include</span><span class="p">((</span><span class="n">router</span><span class="o">.</span><span class="n">urls</span><span class="p">,</span> <span class="s">'app_name'</span><span class="p">))),</span>
+<span class="p">]</span>
+</code></pre></div></div>
+<p>이런식으로 application 스페이스를 주는것이 가능하다. 이는 나중에 view_name=’app_name:user-detail’
+식으로 하이퍼링크 시리얼라이저에 사용된다.</p>
+
+<h2 id="3-nestedsimplerouter">3. NestedSimpleRouter</h2>
+<p>만약 flowers/1/comments 처럼 nested 되어있을때는 어떻게 해야할까
+나는 drf-nested-routers 라는 서드파티 라이브러리를 이용하여 이문제를 해결했다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">comments_router</span> <span class="o">=</span> <span class="n">NestedSimpleRouter</span><span class="p">(</span><span class="n">router</span><span class="p">,</span> <span class="s">r'flowers'</span><span class="p">,</span> <span class="n">lookup</span><span class="o">=</span><span class="s">'flower'</span><span class="p">)</span>
+<span class="n">comments_router</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="s">r'comments'</span><span class="p">,</span> <span class="n">CommentFlowerViewSet</span><span class="p">,</span> <span class="n">base_name</span><span class="o">=</span><span class="s">'flower-comments'</span><span class="p">)</span>
+</code></pre></div></div>
+<p>NestedSimpleRouter의 첫번째 인자로는 부모 router를 집어넣고, 2번째인자로 prefix을 집어넣는다.
+3번째인자의 lookup을 살펴보자. 지금까지 확인한바로는 lookup을 ‘yes’로 지정하면 viewset에서 ‘yes_pk’ 형태로 
+받을수 있어 다음과 같이 쓸수 있다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">get_queryset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">flower</span> <span class="o">=</span> <span class="n">Flower</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">pk</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">kwargs</span><span class="p">[</span><span class="s">'yes_pk'</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">Comment</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="nb">filter</span><span class="p">(</span><span class="n">flower</span><span class="o">=</span><span class="n">flower</span><span class="p">)</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="s">'-created_at'</span><span class="p">)</span>
+</code></pre></div></div>
+<p>register 시에는 첫번째로 인자로 자식의 prefix, 두번째로 viewset, 세번째인자로 함수의 이름을 지정한다.</p>
+
+<h2 id="4-수제-router-">4. 수제 router ?!</h2>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">rest_framework.routers</span> <span class="kn">import</span> <span class="n">Route</span><span class="p">,</span> <span class="n">SimpleRouter</span>
+
+<span class="k">class</span> <span class="nc">FlowerCommentRouter</span><span class="p">(</span><span class="n">SimpleRouter</span><span class="p">):</span>
+    <span class="n">routes</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">Route</span><span class="p">(</span>
+            <span class="n">url</span><span class="o">=</span><span class="s">r'^flowers/{lookup}/{prefix}$'</span><span class="p">,</span>
+            <span class="n">mapping</span><span class="o">=</span><span class="p">{</span><span class="s">'get'</span><span class="p">:</span> <span class="s">'list'</span><span class="p">,</span> <span class="s">'post'</span><span class="p">:</span> <span class="s">'create'</span><span class="p">},</span>
+            <span class="n">name</span><span class="o">=</span><span class="s">'{basename}-list'</span><span class="p">,</span>
+            <span class="n">detail</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
+            <span class="n">initkwargs</span><span class="o">=</span><span class="p">{</span><span class="s">'suffix'</span><span class="p">:</span> <span class="s">'List'</span><span class="p">}</span>
+        <span class="p">),</span>
+    <span class="p">]</span>
+
+<span class="n">comments_router</span> <span class="o">=</span> <span class="n">FlowerCommentRouter</span><span class="p">(</span><span class="n">trailing_slash</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="n">comments_router</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="s">r'comments'</span><span class="p">,</span> <span class="n">CommentFlowerViewSet</span><span class="p">,</span> <span class="n">basename</span><span class="o">=</span><span class="s">'comments'</span><span class="p">)</span>
+</code></pre></div></div>
+<p>NestedSimpleRouter를 사용해도 되지만 router를 위와 같이 커스터마이즈에서 사용할수도 있다!</p>
+
+:ET

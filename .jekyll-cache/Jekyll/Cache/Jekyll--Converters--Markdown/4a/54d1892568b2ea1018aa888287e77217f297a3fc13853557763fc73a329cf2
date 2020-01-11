@@ -1,0 +1,5 @@
+I"�<h2 id="1-http란">1. HTTP란?</h2>
+<p>클라이언트와 서버가 상호적으로 HTML 이나 JSON, XML 등의 리소스들 을 가져올 수 있도록 해주는 프로토콜 (약속) (형식)을 의미한다. <br />
+이때 클라이언트는 주로 웹 브라우저, 앱, 테스트도구이며 HTTP 프로토콜은 어플리케이션 계층에서 최상위에 위치한다.
+<a href="https://developer.mozilla.org/ko/docs/Web/HTTP/Overview">https://developer.mozilla.org/ko/docs/Web/HTTP/Overview</a></p>
+:ET

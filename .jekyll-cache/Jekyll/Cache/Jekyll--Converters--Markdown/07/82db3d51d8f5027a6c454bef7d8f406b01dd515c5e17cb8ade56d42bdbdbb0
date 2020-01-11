@@ -1,0 +1,8 @@
+I"�<h1 id="1-docker-compose를-활용하여-쉽게-컨테이너-생성하기">1. Docker compose를 활용하여 쉽게 컨테이너 생성하기</h1>
+<p>먼저 db_credential.env 를 만들어서 다음과 같이 작성해주자</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">POSTGRES_DB</span><span class="o">=</span>5432
+<span class="nv">POSTGRES_USER</span><span class="o">=</span>hoho
+<span class="nv">POSTGRES_PASSWORD</span><span class="o">=</span>hoho
+<span class="nv">POSTGRES_INITDB_ARGS</span><span class="o">=</span><span class="nt">--encoding</span><span class="o">=</span>UTF-8
+</code></pre></div></div>
+:ET

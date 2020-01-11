@@ -1,0 +1,3 @@
+I"�<h2 id="1-httpresponse">1. HttpResponse</h2>
+<p>모든 view는 요청에 대해 httpResponse를 반환하도록 설계해야 한다.</p>
+:ET

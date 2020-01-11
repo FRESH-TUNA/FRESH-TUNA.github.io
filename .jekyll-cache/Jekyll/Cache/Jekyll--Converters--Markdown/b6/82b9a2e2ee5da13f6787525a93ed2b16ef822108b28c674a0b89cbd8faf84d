@@ -1,0 +1,45 @@
+I"�<h2 id="1-lambda">1. Lambda</h2>
+<h3 id="1-lambda란-무엇인가">1. Lambda란 무엇인가</h3>
+<p>람다 함수는 다음과 같은 특징을 같는다. <br /></p>
+<ol>
+  <li>람다 함수는 이름을 지정하지 않아도 된다.</li>
+  <li>함수의 입력 변수의 이름 또한 필요 없다.</li>
+  <li>두 개 이상의 입력을 받는 함수는 하나의 입력을 받아 또다른 함수를 출력하는 함수로 다시 쓸 수 있다. 
+람대 함수를 잘 활용하면 코드를 상당한 수준으로 함축시켜서 깔끔하게 표현할수 있다. (커링)</li>
+</ol>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 함수의 이름이 정해져 있지 않다.
+</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">)(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+</code></pre></div></div>
+<p><br /><br /></p>
+
+<h2 id="2-map-함수-사례">2. map 함수 사례</h2>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">2</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)))</span>     <span class="c1"># 파이썬 2 및 파이썬 3
+# [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+</span></code></pre></div></div>
+<p>map 함수는 iterable한 객체를 탐색하면서 람다함수의 결과값들로 이루어진 새로운 
+iterable한 객체를 반환한다.</p>
+
+<h2 id="3-filter-함수-사례">3. filter 함수 사례</h2>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">))</span> 
+<span class="c1"># [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]  
+</span></code></pre></div></div>
+<p>filter 함수는 iterable한 객체를 탐색하면서 람디힘수의 결과가 True인것으로만 이루어진
+값들의 iterable한 객체를 반환한다.
+위의 예제는 문자열을 탐색하면서 모든 자릿수를 더하여 반환한다.</p>
+
+<h2 id="4-reduce-함수-사례">4. reduce 함수 사례</h2>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="nb">reduce</span>
+<span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="nb">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="nb">int</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>  <span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">)))</span>
+</code></pre></div></div>
+<p>reduce 함수는 iterable한 객체를 탐색하면서 하나의 값이 출력되도록 설계한다.
+위의 예제는 문자열을 탐색하면서 모든 자릿수를 더하여 반환한다.</p>
+
+<h2 id="5-currying를-적용한-lambda-함수">5. currying를 적용한 lambda 함수</h2>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">computation</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">y</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">z</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">w</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">-</span> <span class="n">z</span> <span class="o">*</span> <span class="n">w</span>
+<span class="n">computation</span><span class="p">(</span><span class="mi">3</span><span class="p">)(</span><span class="mi">3</span><span class="p">)(</span><span class="mi">3</span><span class="p">)(</span><span class="mi">3</span><span class="p">)</span>
+</code></pre></div></div>
+<p>람다함수의 특징중 3번째인 ‘두 개 이상의 입력을 받는 함수는 하나의 입력을 받아 또다른 함수를 출력하는 함수로 다시 쓸 수 있다’를 활용하여 모듈화, 함수가 실행되기전 전처리등의 작업을 진행할수 있다.
+위의 예제는 x, y, z, w를 인수로 받는 람다함수를 currying 하여 계산하는 예제이다.</p>
+:ET

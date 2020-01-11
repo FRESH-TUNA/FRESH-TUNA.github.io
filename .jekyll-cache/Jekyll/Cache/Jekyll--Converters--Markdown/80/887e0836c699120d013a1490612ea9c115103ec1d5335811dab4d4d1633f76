@@ -1,0 +1,36 @@
+I"A<h2 id="1-httpresponse">1. HttpResponse</h2>
+<p>모든 view는 요청에 대해 httpResponse를 반환하도록 설계해야 한다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="s">"Here's the text of the Web page."</span><span class="p">)</span>
+<span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="s">"Text only, please."</span><span class="p">,</span> <span class="n">content_type</span><span class="o">=</span><span class="s">"text/plain"</span><span class="p">)</span>
+<span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="n">b</span><span class="s">'Bytestrings are also accepted.'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">response</span> <span class="o">=</span> <span class="n">HttpResponse</span><span class="p">()</span>
+<span class="n">response</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">"&lt;p&gt;Here's the text of the Web page.&lt;/p&gt;"</span><span class="p">)</span>
+<span class="n">response</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">"&lt;p&gt;Here's another paragraph.&lt;/p&gt;"</span><span class="p">)</span>
+<span class="k">return</span> <span class="n">response</span>
+</code></pre></div></div>
+
+<p>다음과 같이 딕셔너리를 활용하여 response의 header도 설정하거나
+attributes 접근을 통해 status_code를 바꿀수도 있다.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">response</span><span class="p">[</span><span class="s">'Age'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">120</span>
+<span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">=</span> <span class="mi">201</span>
+</code></pre></div></div>
+
+<p>일반적으로 HttpResponse 보다 HttpResponse를 상속한 모듈을 자주 사용한다.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">return</span> <span class="n">HttpResponseRedirect</span><span class="p">(</span><span class="s">'/home'</span><span class="p">)</span>         <span class="c1">#풀path, 절대경로, 상대경로 모두 가능 #301
+</span><span class="k">return</span> <span class="n">HttpResponsePermanentRedirect</span><span class="p">(</span><span class="s">'/home'</span><span class="p">)</span> <span class="c1">#풀path, 절대경로, 상대경로 모두 가능 #302
+</span><span class="k">return</span> <span class="n">HttpResponseRedirect</span><span class="p">(</span><span class="n">reverse</span><span class="p">(</span><span class="s">'home'</span><span class="p">))</span> <span class="c1">#name을 home으로 햇을때 사용
+</span></code></pre></div></div>
+
+<p>restful한 api를 만들기 위해선 HttpResponse를 상속한 JsonResponse를 사용한다.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">return</span> <span class="n">JsonResponse</span><span class="p">({</span><span class="s">'foo'</span><span class="p">:</span> <span class="s">'bar'</span><span class="p">})</span>
+</code></pre></div></div>
+
+<h2 id="2-reverse">2. Reverse</h2>
+<p>reverse 기능을 활용하면 url을 하드코딩하지 않고 이름으로 추상화하여 다룰수 있다.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">return</span> <span class="n">HttpResponseRedirect</span><span class="p">(</span><span class="n">reverse</span><span class="p">(</span><span class="s">'flowers'</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">[</span><span class="mi">2010</span><span class="p">,</span> <span class="mi">2011</span><span class="p">]))</span>
+<span class="k">return</span> <span class="n">HttpResponseRedirect</span><span class="p">(</span><span class="n">reverse</span><span class="p">(</span><span class="s">'flowers'</span><span class="p">,</span> <span class="n">kwargs</span><span class="o">=</span><span class="p">{</span><span class="s">'purpose'</span><span class="p">:</span> <span class="s">'medicine'</span><span class="p">}))</span>
+</code></pre></div></div>
+:ET

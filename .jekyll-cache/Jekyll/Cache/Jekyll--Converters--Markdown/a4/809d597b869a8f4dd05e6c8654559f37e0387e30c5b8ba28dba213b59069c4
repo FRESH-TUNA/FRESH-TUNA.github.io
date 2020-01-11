@@ -1,0 +1,80 @@
+I"^<h1 id="1-docker-compose를-활용하여-쉽게-컨테이너-생성하기">1. Docker compose를 활용하여 쉽게 컨테이너 생성하기</h1>
+<p>먼저 db_credential.env 를 만들어서 다음과 같이 작성해주자</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">POSTGRES_DB</span><span class="o">=</span>5432
+<span class="nv">POSTGRES_USER</span><span class="o">=</span>hoho
+<span class="nv">POSTGRES_PASSWORD</span><span class="o">=</span>hoho
+<span class="nv">POSTGRES_INITDB_ARGS</span><span class="o">=</span><span class="nt">--encoding</span><span class="o">=</span>UTF-8
+</code></pre></div></div>
+
+<p>그리고 credential.env 를 만들어서 다음과 같이 작성해주자</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">WEB_HOST</span><span class="o">=</span>127.0.0.1
+
+<span class="nv">DB_HOST</span><span class="o">=</span>db
+<span class="nv">DB_PORT</span><span class="o">=</span>5432
+<span class="nv">DB_NAME</span><span class="o">=</span>hoho
+<span class="nv">DB_USER</span><span class="o">=</span>hoho
+<span class="nv">DB_PASSWORD</span><span class="o">=</span>1234
+
+<span class="nv">SECRET_KEY</span><span class="o">=</span>hohohohhohhohohohhohohhoohohoho
+<span class="nv">MEDIA</span><span class="o">=</span>http://localhost:8000/media/
+</code></pre></div></div>
+
+<p>db_credential.env, credential.env 작성이 끝났으면 이제 파일이름을 docker-compose.yml로 하여 생성하고 다음과 같이 작성해주자
+db_credential.env, credential.env, docker-compose.yml는 같은 경로에 위치해야 한다!</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>version: <span class="s1">'3'</span>
+
+services:
+  db:
+    image: postgres
+    env_file: 
+      - ./db_credential.env
+    volumes:
+      - ../db_volume:/var/lib/postgresql/data
+
+  web:
+    image: floweryroad-backend:develop
+    env_file: 
+      - ./credential.env
+    volumes:
+      - ../../:/app/floweryroad-backend
+    ports:
+      - <span class="s2">"8000:8000"</span>
+    depends_on: 
+      - db
+    <span class="nb">command</span>: 
+      - /bin/zsh
+      - <span class="nt">-c</span>
+      - |
+        <span class="nb">source</span> /root/.pyenv/versions/floweryroad/bin/activate
+        python /app/floweryroad-backend/manage.py migrate
+        python /app/floweryroad-backend/manage.py runserver 0.0.0.0:8000
+</code></pre></div></div>
+
+<p>credential.env 에 정의한 내용들은 settings.py에서 다음과 같이 
+os.environ[’‘]을 통해서 불러쓰게 된다!</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">SECRET_KEY</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s">'SECRET_KEY'</span><span class="p">]</span>
+
+<span class="n">ROOT_URLCONF</span> <span class="o">=</span> <span class="s">'floweryroad.urls.development'</span>
+<span class="c1">#media 설정
+</span><span class="n">MEDIA_ROOT</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">BASE_DIR</span><span class="p">,</span> <span class="s">'media'</span><span class="p">)</span>
+
+<span class="n">MEDIA_URL</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s">'MEDIA'</span><span class="p">]</span>
+
+<span class="n">DATABASES</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">'default'</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">'ENGINE'</span><span class="p">:</span> <span class="s">'django.db.backends.postgresql_psycopg2'</span><span class="p">,</span>
+        <span class="s">'NAME'</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s">'DB_NAME'</span><span class="p">],</span>
+        <span class="s">'USER'</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s">'DB_USER'</span><span class="p">],</span>
+        <span class="s">'PASSWORD'</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s">'DB_PASSWORD'</span><span class="p">],</span>
+        <span class="s">'HOST'</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s">'DB_HOST'</span><span class="p">],</span>
+        <span class="s">'PORT'</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s">'DB_PORT'</span><span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+</code></pre></div></div>
+
+<p>이제 다음명령어로 개발환경을 돌려보자!!</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker-compose <span class="nt">-f</span> docker/dev/docker-compose.yml up
+</code></pre></div></div>
+:ET

@@ -1,0 +1,40 @@
+I"<h2 id="1-grep">1. grep</h2>
+<p>grep은 입력으로 전달된 파일의 내용에서 특정 문자열을 찾고자할 때 사용하는 명령어입니다.</p>
+
+<h3 id="grep-b1-">grep b1 *</h3>
+<ul>
+  <li>문자열 b1을 모든 파일에서 검색한다.</li>
+</ul>
+
+<h3 id="grep-b1-btxt">grep b1 b.txt</h3>
+<ul>
+  <li>문자열 b1을 b.txt</li>
+</ul>
+
+<h3 id="grep-pineapple-fruitstxt">grep pineapple fruits.txt</h3>
+<ul>
+  <li>문자열 pineapple을 fruits.txt에서 찾아서 출력</li>
+</ul>
+
+<h2 id="2-pipe">2. pipe</h2>
+<h3 id="cat-test1txt--grep-abc">cat test1.txt | grep abc</h3>
+<ul>
+  <li>test1.txt 파일에서 abc 라는 글자가 포함된 라인만 출력</li>
+</ul>
+
+<h3 id="cat-etcpasswd--grep-mail">cat /etc/passwd | grep mail</h3>
+<ul>
+  <li>/etc/passwd 의 내용중에 mail 만 뽑아서 출력</li>
+</ul>
+
+<h3 id="ls--l-etc--more">ls -l /etc | more</h3>
+<ul>
+  <li>/etc의 파일들을 여러페이지로 남겨서 출력</li>
+</ul>
+
+<h3 id="ls--grep-a--grep--v-b">ls | grep a | grep -v b</h3>
+<ul>
+  <li>현재 디렉토리에서 a 라는 글자가 들어간 파일 중 b 가 들어간 파일을 제외하고 출력</li>
+</ul>
+
+:ET
