@@ -189,6 +189,13 @@ docker push myregistry.knufesta2019.de/organization/mariadb:latest
 docker push myregistry.knufesta2019.de/organization/mariadb:latest
 ```
 
-### 8. 참고자료 및 출처
-https://goharbor.io/
-https://www.44bits.io/ko/post/news--docker-found-unauthorized-access-to-docker-hub-database
+## 4. 참고자료 및 출처
+### 1. 이미지
+https://goharbor.io/ 
+<br/>https://www.44bits.io/ko/post/news--docker-found-unauthorized-access-to-docker-hub-database
+
+### 2. 참고자료
+https://www.44bits.io/ko/post/running-docker-registry-and-using-s3-storage
+<br/>https://novemberde.github.io/2017/04/09/Docker_Registry_0.html
+<br/>https://github.com/goharbor/harbor
+<br/>https://engineering.linecorp.com/ko/blog/harbor-for-private-docker-registry/
