@@ -133,10 +133,10 @@ sudo ./install.sh
 harbor 설치에 성공하면 다음과 같은 화면이 뜬다.
 ![Image Alt 텍스트](/img/2020/03/11/Private-Registry/success.png)
 
-먼저 내가 정했던 도메인 (myregistry.knufesta2019.de)으로 접속되는지 확인해보자. 
+먼저 우리가 정했던 도메인 (예: myregistry.knufesta2019.de)으로 접속되는지 확인해보자. 
 다음 화면이 나온다면 harbor 구축의 큰산을 넘은것이다. 
 아이디로 admin, 패스워드로 Harbor12345 (기본계정)을 입력해서 로그인 하도록하자.
-![Image Alt 텍스트](/img/2020/03/11/Private-Registry/harbor.png)
+![Image Alt 텍스트](/img/2020/03/11/Private-Registry/harbor_intro.png)
 
 메인화면이 뜨면 화면 우측 상단의 admin메뉴의 'Change Password'를 클릭하여 계정의 기본 패스워드를 빠르게 바꿔주자
 ![Image Alt 텍스트](/img/2020/03/11/Private-Registry/main.png)
