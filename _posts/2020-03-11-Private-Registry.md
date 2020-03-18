@@ -37,11 +37,11 @@ AWS Certificate Manager에 접속하여 내가 원하는 도메인 이름을 바
 도메인 이름을 'registry.hello.com'으로 설정하여 발급해야 한다. 
 
 ### 4. 로드 밸런서 생성
-향후 레지스트리의 확장성을 고려해서 ec2와 route53 사이에 로드밸런서를 한대 생성하였다. 
+향후 레지스트리의 확장성과 SSL 인증서 연동의 편리함을 이유로 ec2와 route53 사이에 로드밸런서를 한대 생성하였다. 
 https(443 port) 연결을 위해 필요한 인증서는 위의 ACM에서 만든것을 사용하였다. 
 
 aws는 여러 종류의 로드밸런서를 제공하는데 그중에 나는 Application 타입의 로드밸런서를 생성하였다. 
-로드밸런서의 대상그룹에 아까 생성했던 ec2를 추가시킨후, 대상그룹의 443번 포트로 요청을 받으면 ec2의 443번 포트로 보내도록 설정하였다.
+로드밸런서의 대상그룹에 아까 생성했던 ec2를 추가시킨후, 대상그룹의 80번 포트로 요청을 받으면 ec2의 80번 포트로 보내도록 설정하였다.
 
 ### 5. Route53 으로 도메인과 로드밸런서 연동하기
 Route53은 aws가 제공하는 DNS 웹서비스이다. 도메인을 구매하거나 등록, 라우팅을 할수 있는 재미있는 친구인데
@@ -90,7 +90,7 @@ tar xvzf harbor-offline-installer-v1.10.1.tgz
 이과정이 끝나면 다음과 같은 폴더 구조가 될것이다. harbor폴더 안으로 이동해주자
 ![Image Alt 텍스트](/img/2020/03/11/Private-Registry/harbor_download.png)
 
-### 3. openssl을 활용한 인증서 발급
+<!-- ### 3. openssl을 활용한 인증서 발급
 harbor를 https로 접근할때 필요한 인증서를 발급해주는 과정이 필요하다. 
 다음 명령어를 입력하여 ca.key, ca.crt 파일을 생성해주자. 
 -subj 옵션은 각자의 상황에 맞게 적절히 수정해서 적용하면 된다.
@@ -102,12 +102,12 @@ openssl req -x509 -new -nodes -sha512 -days 3650 \
   -subj "/C=KR/ST=Seoul/L=Seoul/O=Org/OU=Registry/CN=myregistry.knufesta2019.de" \
   -key ca.key \
   -out ca.crt
-```
+``` -->
 
-### 4. harbor.yml 수정
+### 3. harbor.yml 수정
 harbor.yml은 harbor 구축시 필요로 하는 설정들이 들어있는 파일이다. 
-hostname을 본인의 원하는 도메인으로 설정해주고, 아까 s3에 접근하기 위해 발급받았던 credentials를 넣어주고
-https 설정도 해주도록 하자. certificate, private_key는 방금 발급된 ca.key, ca.crt의 절대경로를 넣어주자
+hostname을 본인의 원하는 도메인으로 설정해주고, 아까 s3에 접근하기 위해 발급받았던 credentials를 넣어주자. 
+아까 생성했던 s3 bucket에 관한 정보도 집어넣어어야 하는데, 본인이 만든 bucket의 region과 이름을 잘확인하여 기입한다. 
 
 ```
 hostname: myregistry.knufesta2019.de
@@ -118,20 +118,49 @@ storage_service:
     secretkey: xxxxxxxxxxxxxxxxxxxxxxxxxxxx
     region: ap-southeast-1
     bucket: tuna-registry-test
-
-https:
-  port: 443
-  certificate: /home/ec2-user/harbor/ca.crt
-  private_key: /home/ec2-user/harbor/ca.key
 ```
 
-### 5. Harbor 설치
-다음명령어를 입력하여 Harbor 설치를 진행하면 된다.
+harbor.yml 수정이 끝나면 다음 명령어를 실행한다.
 ```bash
-sudo ./install.sh
+sudo ./prepare
 ```
-harbor 설치에 성공하면 다음과 같은 화면이 뜬다.
-![Image Alt 텍스트](/img/2020/03/11/Private-Registry/success.png)
+
+### 4. config.yml, nginx.conf 수정
+./prepare 명령어 실행이 완료되면 common 폴더가 생성 되었을텐데, common 폴더의 일부 파일들의 설정을 바꿔주는 작업을 진행해야 한다. 
+가장먼저 common/config/registry 폴더에 있는 config.yml 의 auth 부분을 다음과 같이 수정해주자.
+```bash
+# before
+auth:
+  token:
+    issuer: harbor-token-issuer
+    realm: http://myregistry.knufesta2019.de/service/token
+    rootcertbundle: /etc/registry/root.crt
+    service: harbor-registry
+
+# after: "realm"에 여러분이 설정한 도메인이 있을것이다, 앞에 http를 https로 바꾸어주자
+auth:
+  token:
+    issuer: harbor-token-issuer
+    realm: https://registry.knufesta2019.de/service/token
+    rootcertbundle: /etc/registry/root.crt
+    service: harbor-registry
+```
+다음으로 common/config/nginx 폴더에 존재하는 nginx.conf 를 수정해줘야한다. 
+nginx.conf 에 존재하는 특정 설정들을 모주 주석처리 해주면 된다.
+```bash
+# before
+proxy_set_header X-Forwarded-Proto $scheme;
+
+# after: 위 설정을 보이는대로 모두 주석처리 해주자
+# proxy_set_header X-Forwarded-Proto $scheme;
+```
+
+
+### 5. Harbor 배포 하기
+다음명령어를 입력하여 Harbor를 배포 할수 있다.
+```bash
+sudo docker-compose up -d
+```
 
 먼저 우리가 정했던 도메인 (예: myregistry.knufesta2019.de)으로 접속되는지 확인해보자. 
 다음 화면이 나온다면 harbor 구축의 큰산을 넘은것이다. 
@@ -199,3 +228,4 @@ https://www.44bits.io/ko/post/running-docker-registry-and-using-s3-storage
 <br/>https://novemberde.github.io/2017/04/09/Docker_Registry_0.html
 <br/>https://github.com/goharbor/harbor
 <br/>https://engineering.linecorp.com/ko/blog/harbor-for-private-docker-registry/
+<br/>https://github.com/goharbor/harbor/issues/3114
