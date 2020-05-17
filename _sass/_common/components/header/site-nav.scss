@@ -21,7 +21,7 @@
     margin: 0 -10px;
     padding: 0 10px;
     clear: both;
-    border-top: 1px solid $gray-lighter;
+    border-top: 1px solid white;
   }
   @include tablet() { display: block !important; }
   @include desktop() { display: block !important; }

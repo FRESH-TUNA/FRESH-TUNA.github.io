@@ -200,10 +200,10 @@ $(document).ready(function () {
       });
 
       NexT.utils.isMist() && hasElement([$logoLineTop, $logoLineBottom]) &&
-      sequence.push(
-        getMistLineSettings($logoLineTop, '100%'),
-        getMistLineSettings($logoLineBottom, '-100%')
-      );
+      // sequence.push(
+      //   getMistLineSettings($logoLineTop, '100%'),
+      //   getMistLineSettings($logoLineBottom, '-100%')
+      // );
 
       hasElement($title) && sequence.push({
         e: $title,

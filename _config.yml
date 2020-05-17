@@ -4,7 +4,7 @@
 # ---------------------------------------------------------------
 
 # Site
-title: T U N A E F F E C T
+title: FRESHTUNA.LOG
 subtitle: 
 description: 참치의 삽질 블로그
 author: DONGWON KIM
@@ -88,7 +88,7 @@ keywords: "Jekyll, NexT"
 rss:
 
 # Specify the date when the site was setup
-#since: 2015
+since: 2019
 
 # icon between year and author @Footer
 authoricon: heart
