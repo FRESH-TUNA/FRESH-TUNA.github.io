@@ -1,5 +1,0 @@
-I"O<h2 id="1-django-router-란">1. Django Router 란</h2>
-<p>Django rest framework를 사용하면 Json object로 decode하거나 object를 json으로 encode 해야하는
-수고를 덜어준다. django-router는 drf가 제공하는 viewset과 연계하여 url의 하드코딩을 막을수 있는 신박한녀석
-이라 볼수 있다.</p>
-:ET
