@@ -182,7 +182,7 @@ python3 /web/manage.py makemigrations
 python3 /web/manage.py migrate
 ```
 
-위의 entrypoiny 파일을 사용하여 처음 개발환경 시작시 마이그레이션을 진행하는 쉘 스크립트를 만들고 이를 실행해주면 된다.
+위의 entrypoint 파일을 사용하여 처음 개발환경 시작시 마이그레이션을 진행하는 쉘 스크립트를 만들고 이를 실행해주면 된다.
 
 ```bash
 #!/bin/sh
@@ -200,7 +200,7 @@ docker-compose down
 echo "development environment finished!"
 ```
 
-### 7. shell_script로 주요 명령어 딘순화하기
+### 6. shell_script로 주요 명령어 딘순화하기
 ```sh
 #!/bin/sh
 function dev_start_func {
@@ -216,7 +216,7 @@ alias dev_stop=dev_stop_func
 ```
 이렇게 쉘 스크립트를 만들어서 source 명령어로 로딩해주면 긴 명령어를 하나의 단어로 축약해서 사용할수 있다. 하지만 매번 shell을 시작할때마다 로딩해줘야 해서 direnv라는 신박한 물건을 도입하게 되었다.
 
-### 8. direnv
+### 7. direnv
 direnv를 활용하면 프로젝트폴더에 진입했을때 자동으로 .envrc를 찾아서 스크립트를 로딩해주므로 편하게 개발할수 있다.<br/>
 만약 프로젝트 폴더를 빠져나오면 다시 스크립트를 언로딩해주는 편리함을 가지고 있었다. 아래와 같이 direnv를 설치해주고
 나만의 명령어 모음집을 완성할수 있었다.
@@ -253,7 +253,7 @@ export_alias image_update "docker commit my_project_image_web_1 example \$@"
 
 .envrc를 만들고 direnv allow를 해주면, 앞으로 프로젝트 폴더에 진입시 자동으로 스크립트가 로딩되어 미리 정의해둔 단어로 명령을 실행할수 있다.
 
-### 9. docker-sync로 개발환경 속도 높이기
+### 8. (부록) docker-sync로 개발환경 속도 높이기
 이제 신나게 개발만 하는일이 남았는데 윈도우와 맥환경에서 volume 사용시 60배정도의 성능저하 현상이 있어서 이를 해결하기 위한
 방법을 찾아야만 했다.<br/>
 여러 자료를 조사해본끝에 docker-sync라는 서드파티앱을 활용하기로 결정했다.<br/>
@@ -311,13 +311,13 @@ volumes:
 docker-sync start
 ```
 
-### 10. 으아아악
+### 9. 으아아악
 도커로 개발환경을 구축하면서 Infrastructure as a code의 장점을 조금이나마 느낄수 있었던것 같다.<br/>
 하지만 도커를 개발을 시작하면서 관리해야할 파일들이 늘어났고, 여러개의 컨테이너로 돌릴때 docker-compose 만으로 커버하기 힘든 상황이 나중에
 발생할것 같아 수많은 고민이 들었다.<br/>
 이러한 문제들 때문에 '컨테이너 오케스트레이션' 이라는 개념이 나온것 같고 쿠버네티스를 공부해야겠다는 생각을 하며 글을 마쳐보려 한다.
 
-### 11. 내가 참고한 자료
+### 10. 내가 참고한 자료
 1. https://subicura.com/2017/01/19/docker-guide-for-beginners-1.html<br/>
 2. https://medium.com/myrealtrip-product/docker-%EB%A1%9C-%EC%BE%8C%EC%A0%81%ED%95%9C-%EA%B0%9C%EB%B0%9C%ED%99%98%EA%B2%BD-%EA%B5%AC%EC%B6%95%ED%95%98%EA%B8%B0-e484b80947a3<br/>
 3. https://myjamong.tistory.com/105<br/>
