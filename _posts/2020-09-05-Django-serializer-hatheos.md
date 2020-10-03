@@ -7,7 +7,7 @@ categories: "Django"
 comments: true
 ---
 
-## 1. HATHEOS
+## 1. HATHOAS
 클라이언트가 서버에 요청을 할때, 서버에서 미리 받아온 URL을 사용하는 기법 
 <br><br>
 
