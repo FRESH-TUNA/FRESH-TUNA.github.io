@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "HATEOAS를 고려한 Django Serialzier 사용"
+title: "HATEOAS를 고려한 Django Serializer 사용"
 author: "DONGWON KIM"
 meta: "Springfield"
 categories: "Django"
