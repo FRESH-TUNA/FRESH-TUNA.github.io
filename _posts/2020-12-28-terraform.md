@@ -162,3 +162,7 @@ resource "aws_security_group" "scenario_1_rds" {
   }
 }
 ```
+
+## 5. 참고자료
+### [https://www.44bits.io/ko/post/terraform_introduction_infrastrucute_as_code](https://www.44bits.io/ko/post/terraform_introduction_infrastrucute_as_code)
+### [https://registry.terraform.io/providers/hashicorp/aws/latest/docs](https://registry.terraform.io/providers/hashicorp/aws/latest/docs)
