@@ -11,7 +11,7 @@ comments: true
 s3 는 기본적으로 아마존 VPC에서 다루는 오브젝트로, ec2에서 s3를 접근하고자 할때 인터넷을 통해서 접근한다. 이걸 방지하기 위해서 나온 개념이 vpc endpoint이며, 이를 통해 ec2에서 아마존 사설망을 통해 s3에 접근할수 있고 인터넷을 통한 부정한 엑세스를 방지할수 있다.
 
 ## 2. 구조도
-![Image Alt 텍스트](/img/2021/2/1/terraform/scenario_3.jpg)
+![Image Alt 텍스트](/img/2021/2/1/terraform/scenario_3.PNG)
 s3 에 엑세스할수 있는 인스턴스는 프라이빗 서브넷에 위치해 있고 오르지 퍼블릭 서브넷의 bastion 인스턴스를 통해서만 접근할수 있다. s3는 인터넷이 아닌 gateway endpoint를 통한 사설망 통신을 통해 접근한다.
 
 ## 3. 주요 테라폼 코드
