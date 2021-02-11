@@ -11,7 +11,7 @@ comments: true
 elastic ip는 변하지 않는 정적 공인 ip 주소 서비스이다. 이미 ec2에 할당된 elastic ip를 다른 ec2에 할당해도 ip주소는 변하지 않기 때문에, 동일한 ip주소로 서비스를 유지할수 있는 장점이 있다. 하지만 로드밸런서와 오토스케일링그룹등의 서비스의 좋은점이 많아 elastic ip는 사용하지 않는것이 좋기는 하다. 이번 실습에서는 단일 인스턴스 환경에서, AZ 장애 발생시, 바로 다른 AZ에서 인스턴스를 생성하고 elastic ip를 할당하여 고가용성을 구현하는 시나리오를 구축해보고자 한다.
 
 ## 2. 구조도
-![Image Alt 텍스트](/img/2021/2/1/terraform/scenario_4.png)
+![Image Alt 텍스트](/img/2021/2/11/terraform/scenario_4.png)
 
 ## 3. 주요 테라폼 코드
 ```sh
