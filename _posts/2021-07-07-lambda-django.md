@@ -64,7 +64,7 @@ pip3 install zappa
 zappa init
 ```
 
-config 파일의 이름을 다음과 같게 수정한다. 본인의 django 프로젝트의 settings.py 위치에 따라 django_settings 값을, 테라폼에 의해 생성된 vpc의 서브넷, 보안그룹 id를 수정해주면 된다.
+config 파일의 이름을 다음과 같게 수정한다. 본인의 django 프로젝트의 settings.py 위치에 따라 django_settings 값을, 테라폼에 의해 생성된 vpc의 서브넷, 보안그룹 id를 수정해주면 된다. 필요한 환경변수가 있다면 키와 값을 environment_variables 섹션에 추가해주면 된다. 만약 안쓴다면 environment_variables 섹션을 제거한다.
 
 ```
 {
@@ -83,7 +83,12 @@ config 파일의 이름을 다음과 같게 수정한다. 본인의 django 프�
             ], // Note: not all availability zones support Lambda!
             "SecurityGroupIds": [ "sg-0750007a2c668e92b" ]
         },
-        "slim_handler": true
+        "slim_handler": true,
+        "environment_variables": {
+            "your_key_1": "your_value_1",
+            "your_key_2": "your_value_2",
+            ...
+        }
     }
 }
 ```
