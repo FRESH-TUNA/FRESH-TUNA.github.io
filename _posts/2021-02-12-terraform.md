@@ -148,3 +148,7 @@ POLICY
 }
 ```
 비디오들을 저장할 s3 버킷을 하나 생성해주었다. 이때 cloudfront oai, iam role principal로 설정하여 특정 cloudfront distribution 이나 인스턴스에서만 s3로 요청을 할수 있게 구성했다.
+<br/><br/>
+
+## 4. 백엔드 코드
+[https://github.com/lunacircle4/django_streaming_example](https://github.com/lunacircle4/django_streaming_example)
