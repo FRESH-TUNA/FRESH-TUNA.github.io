@@ -6,14 +6,21 @@ type: about
 
 ![Image Alt 텍스트](/img/about/me.jpeg)
 # 김동원
+## 주요 활동
 #### 우리말소프트 하계인턴 (2018년 6월 ~ 2018년 8월)
-#### Twisted Forged Studio 동계인턴 (2019년 1월 ~ 2019년 2월)
+#### Indyne(Twisted Forged Studio) 동계인턴 (2019년 1월 ~ 2019년 2월)
 #### 멋쟁이사자처럼 7기 (2019년 3월 ~)
 #### KB국민은행 진로체험캠프 프로그래밍 메인멘토 (2019년 10월 12일)
 #### 고미코퍼레이션 개발자 (2019년 11월 ~ 2020년 4월)
 #### 강원대학교 컴퓨터정보통신공학전공 졸업 (2020년 2월 13일)
-#### Ubuntu-l10n-ko 팀 번역기여자 (2020년 8월 ~)
-<br/><br/><br/><br/>
+#### Ubuntu-l10n-ko 팀 번역기여자 (2020년 8월 ~ 2021년 2월)
+<br/>
+
+## 취득 자격증
+#### 정보처리기사 (2019년 11월)
+#### AWS Solution Architect Associate (2021년 6월 ~ 2024년 6월)
+#### AWS Solution Architect Professional (2021년 6월 ~ 2024년 6월)
+<br/><br/><br/>
 
 # I made ... 
 <br/>
