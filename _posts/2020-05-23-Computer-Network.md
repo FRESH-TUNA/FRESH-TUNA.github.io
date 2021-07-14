@@ -3,7 +3,7 @@ layout: post
 title: "Computer Network"
 author: "DONGWON KIM"
 meta: "Springfield"
-categories: "network"
+categories: "Infra"
 comments: true
 ---
 

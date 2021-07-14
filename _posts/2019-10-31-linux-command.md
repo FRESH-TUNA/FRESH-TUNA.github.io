@@ -3,7 +3,7 @@ layout: post
 title: "알아두면 좋은 리눅스 명령어"
 author: "DONGWON KIM"
 meta: "Springfield"
-categories: "linux"
+categories: "Infra"
 comments: true
 ---
 

@@ -3,7 +3,7 @@ layout: post
 title: "logrotate를 활용하여 로그 관리하기"
 author: "DONGWON KIM"
 meta: "Springfield"
-categories: "Django"
+categories: "Infra"
 comments: true
 ---
 

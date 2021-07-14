@@ -3,7 +3,7 @@ layout: post
 title: "쿠버네티스 시크릿 업데이트 하기"
 author: "DONGWON KIM"
 meta: "Springfield"
-categories: "infra"
+categories: "Infra"
 comments: true
 ---
 

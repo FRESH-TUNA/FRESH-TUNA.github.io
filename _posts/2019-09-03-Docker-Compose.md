@@ -1,3 +1,12 @@
+---
+layout: post
+title: "Docker compose를 활용하여 쉽게 컨테이너 생성하기"
+author: "DONGWON KIM"
+meta: "Springfield"
+categories: "Infra"
+comments: true
+---
+
 # 1. Docker compose를 활용하여 쉽게 컨테이너 생성하기
 먼저 db_credential.env 를 만들어서 다음과 같이 작성해주자
 ```bash

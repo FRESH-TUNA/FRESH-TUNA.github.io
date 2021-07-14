@@ -3,7 +3,7 @@ layout: post
 title: "Amazon EC2, S3와 harbor를 활용한 도커 레지스트리 구축"
 author: "DONGWON KIM"
 meta: "Springfield"
-categories: "CI/CD"
+categories: "Infra"
 ---
 
 ## 1. 서론 

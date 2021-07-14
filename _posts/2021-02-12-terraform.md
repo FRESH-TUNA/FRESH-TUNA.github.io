@@ -3,7 +3,7 @@ layout: post
 title: "cloudfront signed cookie를 활용한 회원전용 동영상 서비스 구축"
 author: "DONGWON KIM"
 meta: "Springfield"
-categories: "CI/CD"
+categories: "Infra"
 comments: true
 ---
 

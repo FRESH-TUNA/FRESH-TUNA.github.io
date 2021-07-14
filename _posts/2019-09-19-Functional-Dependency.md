@@ -3,7 +3,7 @@ layout: post
 title: "함수적종속과 정규화"
 author: "DONGWON KIM"
 meta: "Springfield"
-categories: "데이터베이스"
+categories: "Infra"
 comments: true
 ---
 

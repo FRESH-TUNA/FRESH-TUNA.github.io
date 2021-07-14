@@ -3,7 +3,7 @@ layout: post
 title: "탄력적 ip 를 활용한 고가용성 환경 구축"
 author: "DONGWON KIM"
 meta: "Springfield"
-categories: "CI/CD"
+categories: "Infra"
 comments: true
 ---
 

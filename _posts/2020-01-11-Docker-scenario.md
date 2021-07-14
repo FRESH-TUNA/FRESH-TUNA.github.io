@@ -3,7 +3,7 @@ layout: post
 title: "Docker를 활용한 개발환경 구축하기"
 author: "DONGWON KIM"
 meta: "Springfield"
-categories: "CI/CD"
+categories: "Infra"
 ---
 
 ## 1. D O C K E R

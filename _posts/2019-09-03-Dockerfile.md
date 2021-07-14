@@ -3,7 +3,7 @@ layout: post
 title: "Dockerfile 작성 및 이미지 빌드 가이드"
 author: "DONGWON KIM"
 meta: "Springfield"
-categories: "CI/CD"
+categories: "Infra"
 comments: true
 ---
 

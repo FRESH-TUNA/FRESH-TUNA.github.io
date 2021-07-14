@@ -3,7 +3,7 @@ layout: post
 title: "도커 명령어 정리"
 author: "DONGWON KIM"
 meta: "Springfield"
-categories: "CI/CD"
+categories: "Infra"
 ---
 
 ## 1. network를 이용한 이미지 실행

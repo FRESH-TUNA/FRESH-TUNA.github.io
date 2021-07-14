@@ -3,7 +3,7 @@ layout: post
 title: "Cookie와 Session"
 author: "DONGWON KIM"
 meta: "Springfield"
-categories: "web"
+categories: "Infra"
 ---
 
 ## 1. HTTP의 간략한 정의

@@ -3,7 +3,7 @@ layout: post
 title: "Zappa 라이브러리를 사용하여 Django 프로젝트 lambda 배포하기"
 author: "DONGWON KIM"
 meta: "Springfield"
-categories: "CI/CD"
+categories: "Infra"
 comments: true
 ---
 

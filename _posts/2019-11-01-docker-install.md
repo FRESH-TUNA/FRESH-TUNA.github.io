@@ -1,3 +1,11 @@
+---
+layout: post
+title: "우분투 환경에서 Docker 설치하기"
+author: "DONGWON KIM"
+meta: "Springfield"
+categories: "Infra"
+---
+
 # 1. docker 설치하기
 
 Ubuntu 18.04 기준으로 작성되어있으며 다음 명령어들 타이핑하여 우분투를 docker를 설치할수 있다.

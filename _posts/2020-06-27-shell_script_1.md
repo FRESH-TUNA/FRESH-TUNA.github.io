@@ -3,7 +3,7 @@ layout: post
 title: "쉘스크립트 I"
 author: "DONGWON KIM"
 meta: "Springfield"
-categories: "OS"
+categories: "Infra"
 comments: true
 ---
 

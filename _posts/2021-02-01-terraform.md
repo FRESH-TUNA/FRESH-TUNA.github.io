@@ -3,7 +3,7 @@ layout: post
 title: "vpc gateway endpoint를 활용하여 안전하게 s3 활용하기"
 author: "DONGWON KIM"
 meta: "Springfield"
-categories: "CI/CD"
+categories: "Infra"
 comments: true
 ---
 
