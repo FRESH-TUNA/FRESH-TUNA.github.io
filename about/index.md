@@ -44,7 +44,6 @@ type: about
 # 머동머동
 ### 2019 강원대학교 축제 사이트, 머동머동<br/>
 ### 3일간 접속자수 약 7700명 
-### [https://knufesta2019.freshtuna.me/](https://knufesta2019.freshtuna.me/)
 <!-- Django로 프론트엔드, 백엔드를 모두 개발했습니다 -->
 <!-- <br/>
 ## Backend & Frontend
