@@ -18,6 +18,14 @@ cloudfront는 edge location을 통한 컨텐츠의 빠른 다운로드, 업로�
 ## 2. 구조도
 ![Image Alt 텍스트](/img/2021/2/12/scenario_6.png)
 
+## 2.5 워크플로우
+1. 쿠키 발급
+사용자 인증 → app 서버에서 필요한 정보를 private key로 서명한 cookle가 담겨 있는 set-cookie 헤더 반환 → 웹 브라우저에서 쿠키 set
+
+2. 요청
+cloudfront에서 쿠키로 public key로 확인하여 허용여부를 판단한다.
+s3 bucket policy를 통해 클라우드프론트 oai 통신만 허용한다.
+
 ## 3. 주요 테라폼 코드
 ```
 resource "aws_cloudfront_origin_access_identity" "scenario_6" {
@@ -155,5 +163,9 @@ POLICY
 비디오들을 저장할 s3 버킷을 하나 생성해주었다. 이때 cloudfront oai, iam role principal로 설정하여 특정 cloudfront distribution 이나 인스턴스에서만 s3로 요청을 할수 있게 구성했다.
 <br/><br/>
 
-## 4. 백엔드 코드
+## 4. 시행 착오
+1. eip할당후 바로 parameter store에 요청을 하면 딜레이때문에 timeout 발생할수 있다.
+2. terraform의 기능지원이 늦어져서 aws_cloudfront_public_key, key group을 직접 만들어야 하는 문제가 있었음 → terraform cloudformation stack 사용 or 향후 기능 지원시 terraform import 후 gem terraforming tool로 설정 생성
+
+## 5. 백엔드 코드
 [https://github.com/lunacircle4/django_streaming_example](https://github.com/lunacircle4/django_streaming_example)
