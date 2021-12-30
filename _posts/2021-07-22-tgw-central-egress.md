@@ -136,7 +136,7 @@ resource "aws_route_table" "private" {
 
 2. ssh 키 bastion 으로 복사시 키 파일 이름을 변경하면 
 
-3. 중앙 네트워킹 퍼블릭 서브넷에서 다른 서브넷을 향한 Transit Gateway의 경로를 생성해야한다.
+3. 중앙 네트워킹 퍼블릭 서브넷에서 다른 서브넷을 향한 Transit Gateway의 경로를 생성해야한다. response가 VPC에 도달했을대때 client VPC로 라우팅이 필요하기 때문이다.
 
 4. bastion 호스트 연결 및 키 복사 예제, 안될시 sudo로 해본다.
 ```bash
