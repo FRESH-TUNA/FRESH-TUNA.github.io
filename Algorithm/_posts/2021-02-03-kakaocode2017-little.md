@@ -7,7 +7,7 @@ comments: true
 ---
 
 ## 1. 문제 출처
-https://programmers.co.kr/learn/courses/30/lessons/1836
+[https://programmers.co.kr/learn/courses/30/lessons/1836](https://programmers.co.kr/learn/courses/30/lessons/1836)
 
 ## 2. Introduction
 카카오코드 2017 본선에 출제되었던 문제이다. 여러가지 풀이방법이 있지만 이글에서는 DFS를 활용한 풀이를 다뤄보고자 한다. 상당히 어려웠는데 풀다보니 뿌듯함(?)을 느낄수 있었다.
