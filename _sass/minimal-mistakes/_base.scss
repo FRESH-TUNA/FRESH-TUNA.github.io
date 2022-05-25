@@ -126,6 +126,9 @@ blockquote {
 /* links */
 
 a {
+  // 및줄 제거 하기, 2022/05/26
+  text-decoration : none;
+
   &:focus {
     @extend %tab-focus;
   }

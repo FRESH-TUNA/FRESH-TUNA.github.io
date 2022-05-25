@@ -7,7 +7,7 @@ comments: true
 ---
 
 ## 1. 문제 출처
-[https://programmers.co.kr/learn/courses/30/lessons/67259](https://programmers.co.kr/learn/courses/30/lessons/67259)
+[문제 바로 가기](https://programmers.co.kr/learn/courses/30/lessons/67259)
 
 ## 2. Introduction
 카카오인턴쉽 2020에 출제되었던 문제이다. BFS를 활용하면 풀수가 있는데 DP의 요소가 녹아들어있는(?) 나에게는 까다로운 문제였다.
