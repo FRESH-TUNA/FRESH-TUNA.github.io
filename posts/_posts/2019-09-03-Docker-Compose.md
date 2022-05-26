@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "Docker compose를 활용하여 쉽게 컨테이너 생성하기"
-author: "DONGWON KIM"
-meta: "Springfield"
+# author: "DONGWON KIM"
+# meta: "Springfield"
 categories: "Infra"
 comments: true
 ---

@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "함수적종속과 정규화"
-author: "DONGWON KIM"
-meta: "Springfield"
+# author: "DONGWON KIM"
+# meta: "Springfield"
 categories: "Infra"
 comments: true
 ---

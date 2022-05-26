@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "카카오 인턴쉽 2020, 경주로 건설, python"
-author: "DONGWON KIM"
-meta: "Springfield"
+# author: "DONGWON KIM"
+# meta: "Springfield"
 comments: true
 ---
 

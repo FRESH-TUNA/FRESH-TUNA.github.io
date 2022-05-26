@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "Docker를 활용한 개발환경 구축하기"
-author: "DONGWON KIM"
-meta: "Springfield"
+# author: "DONGWON KIM"
+# meta: "Springfield"
 categories: "Infra"
 ---
 
@@ -61,7 +61,7 @@ docker run --rm -it my_image /bin/bash
 가정먼저 아래의 자료를 참고하여 docker와 docker-compose를 설치해주었다.<br/>
 참고자료: https://myjamong.tistory.com/105
 
-### 1. 파이썬 Base 이미지 만들기 
+### 1. 파이썬 Base 이미지 만들기
 ```bash
 FROM python:3.8.1-slim-buster
 
@@ -82,7 +82,7 @@ Dockerfile을 작성할때 RUN 명령어를 활용하여 컨테이너 환경에 
 파이썬 기반의 환경을 직접 구축하는것도 좋지만 도커 허브가 제공하는 공식 이미지를 기반으로 하여 Dockerfile을 작성하면 빠르고 안정적으로 인프라를 구성할수 있다. 나는 python:3.8.1-slim-buster 라는 데비안 기반의 공식 이미지를 기반으로 원하는 이미지를 만들었다.
 <br/>
 
-### 2. Django 개발환경 이미지 만들기 
+### 2. Django 개발환경 이미지 만들기
 ```bash
 FROM lunacircle4/python:3.8.1 as dev
 WORKDIR /web

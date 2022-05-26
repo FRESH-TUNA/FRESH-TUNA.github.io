@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "Transit Gateway를 통한 중앙 집중식 egress 구축"
-author: "DONGWON KIM"
-meta: "Springfield"
+# author: "DONGWON KIM"
+# meta: "Springfield"
 categories: "Infra"
 comments: true
 ---

@@ -1,13 +1,13 @@
 ---
 layout: post
 title: "유연한 Django 프로젝트 구조잡기"
-author: "DONGWON KIM"
-meta: "Springfield"
+# author: "DONGWON KIM"
+# meta: "Springfield"
 categories: "Django"
 comments: true
 ---
 
-## 1. 프롤로그 
+## 1. 프롤로그
 <br/> 
 ![Image Alt 텍스트](/img/2019/04/28/Django-101/django.png)
 django는 프로젝트 구성에 있어서 자유도가 높은 프레임워크이다. 하지만 자유도가 너무 높은 나머지, 나는 프로젝트 구조를 짜면서 항상 방황해왔었다.

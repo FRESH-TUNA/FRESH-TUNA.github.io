@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "리액트 라이프사이클"
-author: "DONGWON KIM"
-meta: "Springfield"
+# author: "DONGWON KIM"
+# meta: "Springfield"
 categories: "React"
 comments: true
 ---

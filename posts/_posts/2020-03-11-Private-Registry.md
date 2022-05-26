@@ -1,12 +1,12 @@
 ---
 layout: post
 title: "Amazon EC2, S3와 harbor를 활용한 도커 레지스트리 구축"
-author: "DONGWON KIM"
-meta: "Springfield"
+# author: "DONGWON KIM"
+# meta: "Springfield"
 categories: "Infra"
 ---
 
-## 1. 서론 
+## 1. 서론
 ![Image Alt 텍스트](/img/2020/03/11/Private-Registry/harbor.png)
 CI/CD 파이프라인은 크게 형상관리, 빌드, 테스트, 배포, 모니터링으로 구성되어있다. 
 그중 '레지스트리' 는 CI/CD 파이프라인을 통해 빌드된 이미지를 관리하는 서비스이며, 대표적으로 우리가 가장 많이 사용하는 docker hub, AWS ECR 등의 서비스가 있다. 

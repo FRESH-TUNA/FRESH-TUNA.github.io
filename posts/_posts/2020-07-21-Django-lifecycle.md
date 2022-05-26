@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "Django 라이프사이클 요약"
-author: "DONGWON KIM"
-meta: "Springfield"
+# author: "DONGWON KIM"
+# meta: "Springfield"
 categories: "Django"
 comments: true
 ---

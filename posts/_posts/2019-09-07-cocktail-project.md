@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "칵테일프로젝트에 참여하다"
-author: "DONGWON KIM"
-meta: "Springfield"
+# author: "DONGWON KIM"
+# meta: "Springfield"
 categories: "life"
 comments: true
 ---

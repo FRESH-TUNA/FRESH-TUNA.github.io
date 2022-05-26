@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "우분투 환경에서 Docker 설치하기"
-author: "DONGWON KIM"
-meta: "Springfield"
+# author: "DONGWON KIM"
+# meta: "Springfield"
 categories: "Infra"
 ---
 

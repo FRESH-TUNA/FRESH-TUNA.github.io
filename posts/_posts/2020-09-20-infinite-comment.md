@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "대댓글 구현하기"
-author: "DONGWON KIM"
-meta: "Springfield"
+# author: "DONGWON KIM"
+# meta: "Springfield"
 categories: "Django"
 comments: true
 ---

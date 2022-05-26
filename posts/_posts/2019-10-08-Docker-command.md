@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "도커 명령어 정리"
-author: "DONGWON KIM"
-meta: "Springfield"
+# author: "DONGWON KIM"
+# meta: "Springfield"
 categories: "Infra"
 ---
 

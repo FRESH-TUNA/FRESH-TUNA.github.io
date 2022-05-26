@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "카카오코드 2017, 리틀프렌즈사천성, java"
-author: "DONGWON KIM"
-meta: "Springfield"
+# author: "DONGWON KIM"
+# meta: "Springfield"
 comments: true
 ---
 

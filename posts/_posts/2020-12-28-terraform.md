@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "Terraform을 활용한 aws 인프라 구축해보기"
-author: "DONGWON KIM"
-meta: "Springfield"
+# author: "DONGWON KIM"
+# meta: "Springfield"
 categories: "Infra"
 comments: true
 ---

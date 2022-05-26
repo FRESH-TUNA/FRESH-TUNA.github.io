@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "Cookie와 Session"
-author: "DONGWON KIM"
-meta: "Springfield"
+# author: "DONGWON KIM"
+# meta: "Springfield"
 categories: "Infra"
 ---
 

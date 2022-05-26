@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "Dockerfile 작성 및 이미지 빌드 가이드"
-author: "DONGWON KIM"
-meta: "Springfield"
+# author: "DONGWON KIM"
+# meta: "Springfield"
 categories: "Infra"
 comments: true
 ---
@@ -56,7 +56,7 @@ COPY    ./requirements.txt /app/floweryroad-backend/requirements.txt
 
 <br><br>
 
-## 3. 빌드를 통해 이미지 생성하기 
+## 3. 빌드를 통해 이미지 생성하기
 도커파일 작성이 끝나면 docker build 명령어로 빌드를 실행할수 있다.
 -t 옵션으로 이미지의 이름과 태깅을 지정할수 있고 -f 옵션으로 Dockerfile을 위치를 설정한다.
 마지막의 . 은 빌드가 진행될 문맥을 뜻하는데 다음명령어를 보며 한번 생각해보자
@@ -122,7 +122,7 @@ RUN         apt-get -y install supervisor
 생각해 가장먼저 위와 같이 django_base 이미지 파일을 만들었다.
 
 
-#### 2. 개발에 필요한 이미지 만들기 
+#### 2. 개발에 필요한 이미지 만들기
 ```bash
 FROM        django_base
 MAINTAINER  lunacircle4@gmail.com
@@ -141,7 +141,7 @@ django_base 이미지에 개발에 필요한 가상환경및 파이썬 모듈들
 docker commit CONTAINER_NAME lunacircle4/floweryroad-backend:develop
 ```
 
-#### 3. docker-compose로 개발 진행하기 
+#### 3. docker-compose로 개발 진행하기
 ```bash
 version: '3'
 
@@ -177,7 +177,7 @@ env_file 옵션으로 노출이 되면 안되는 값들을 파일에 모아서 .
 volumes 옵션으로 비즈니스로직을 복사하지 않고 mount할수 있다!! db도 마찬가지로 내용을 <br/>
 마운트 해서 이미지나 컨테이너가 없어져도 db데이터는 남아있게 할수 있다. <br/>
 
-#### 4. 배포 이미지 만들기 
+#### 4. 배포 이미지 만들기
 ```bash
 FROM        floweryroad-backend:develop
 MAINTAINER  lunacircle4@gmail.com
@@ -190,7 +190,7 @@ RUN         cp -f /app/web/.server/supervisor_app.conf /etc/supervisor/conf.d/
 배포시에는 volume을 쓰지 않고 직접 비즈니스 로직을 복사해서 사용하며 supervisor setting도 추가해주었다.
 
 
-#### 5. docker-compose로 배포 진행하기 
+#### 5. docker-compose로 배포 진행하기
 ```bash
 version: '3'
 

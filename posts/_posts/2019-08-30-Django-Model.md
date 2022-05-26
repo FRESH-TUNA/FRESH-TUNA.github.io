@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "Django ORM - Models"
-author: "DONGWON KIM"
-meta: "Springfield"
+# author: "DONGWON KIM"
+# meta: "Springfield"
 categories: "Django"
 comments: true
 ---

@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "Django 커스텀 User Model 사용하기"
-author: "DONGWON KIM"
-meta: "Springfield"
+# author: "DONGWON KIM"
+# meta: "Springfield"
 categories: "Django"
 comments: true
 ---

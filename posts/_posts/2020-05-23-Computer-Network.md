@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "Computer Network"
-author: "DONGWON KIM"
-meta: "Springfield"
+# author: "DONGWON KIM"
+# meta: "Springfield"
 categories: "Infra"
 comments: true
 ---

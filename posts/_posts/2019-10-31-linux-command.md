@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "알아두면 좋은 리눅스 명령어"
-author: "DONGWON KIM"
-meta: "Springfield"
+# author: "DONGWON KIM"
+# meta: "Springfield"
 categories: "Infra"
 comments: true
 ---
@@ -45,7 +45,7 @@ find . | grep "\.log$"</pre><p>이제 다음으로 할일은 뽑아낸 파일들
 ./5.log</pre><h2>2. 최근에 수정된 파일 찾기 (find, xargs, sort)</h2><p>find 명령어의 -mmin 옵션을 활용하면 최근에 어떤 파일들이 수정되었는지 확인할수 있습니다.</p><pre class="EnlighterJSRAW" data-enlighter-language="shell"># 루트 하위 기준으로 60분 이내에 수정된 파일들을 찾는다.
 find / -mmin -60
 
-# 다음 명령어로 파일로도 저장할수 있다. 
+# 다음 명령어로 파일로도 저장할수 있다.
 find / -mmin -60 -type -f &gt; resent_files.txt</pre><p>최근 수정된 파일들의 크기를 알고싶을때 ls 명령어와 파이프로 연계하면 됩니다. sort 명령어와 함께 파이프로 연계하면 파일들을 크기순으로 정렬할수 있습니다.</p><pre class="EnlighterJSRAW" data-enlighter-language="shell"># -n 옵션으로 정수기반의 정렬
 # -r 옵션으로 DESC로 정렬
 # -k 5 옵션으로 다섯번째 키인 파일의 용량으로 정렬
