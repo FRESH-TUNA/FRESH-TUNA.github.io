@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Effective java 11장, 79절, Prefer executors, tasks, and streams to threads"
+title: "Effective java 11장, 80절, Prefer executors, tasks, and streams to threads"
 tags: [java]
 comments: true
 ---
