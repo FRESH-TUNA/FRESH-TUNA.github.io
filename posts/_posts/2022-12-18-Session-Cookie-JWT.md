@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Cookie와 Session, JWT"
+title: "Cookie와 Session, JWT, BFF 패턴"
 # author: "DONGWON KIM"
 # meta: "Springfield"
 categories: "Infra"
@@ -122,6 +122,10 @@ Refresh Token을 한번만 사용할 수 있게(One Time Use Only) 만드는 방
 완벽한 토큰관리 방법은 없는것 같다. private 변수를 사용하면 사용자경험이 악화되고, 스토리지의 경우 XSS공격, 쿠키는 XSS, CSRF에 취약하다. 필자는 프로젝트를 개발할때, refresh 토큰은 쿠키에 저장을 하고, access 토큰의 경우 스토리지에 저장하고 있다.
 
 
+## BFF(Backend for Frontend pattern) 패턴
+- 프론트엔드를 위한 게이트웨이 백엔드를 추가하여 운영한다. 
+- 예를 들어서 게이트웨이에선 쿠키-세션 인증 방식을 사용하고, 게이트웨이와 백엔드에서는 jwt 패턴을 사용한다.
+- 확장성과 보안을 둘다 잡을수 있지만, 대규모시스템에 적합하다.
 
 ## 7. 참고자료
 
