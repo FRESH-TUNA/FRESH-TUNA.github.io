@@ -6,8 +6,7 @@ comments: true
 ---
 
 ## 1. Serializable ?
-java.io 패키지에서 제공하는 직렬화/역직렬화 기능을 제공하는 인터페이스다. 이 인터페이스는 구현해야할 메소드는 없지만 marker의 역활을 한다. 이 인터페이스를 
-상속 받은 클래스는 JVM을 통해 직렬화/역직렬화가 가능하다. Serializable을 구현한 클래스의 subtype들은 모두 직렬화/역직렬화가 가능하다.
+java.io 패키지에서 제공하는 직렬화/역직렬화 기능을 제공하는 인터페이스다. 이 인터페이스는 구현해야 하는  메소드는 없지만 jvm에게 표시해주는 marker의 역활을 한다. 이 인터페이스를 상속 받은 클래스는 JVM을 통해 직렬화/역직렬화가 가능하다. Serializable을 구현한 클래스의 subtype들은 모두 직렬화/역직렬화가 가능하다.
 생성한 객체를 파일로 저장할 때, 저장한 객체를 읽을 때, 다른 서버에서 생성한 객체를 받을 때 유용하게 사용할수 있다.
 
 ## 2. 직렬화/역직렬화
@@ -24,8 +23,7 @@ public class AlgorithmResponse implements Serializable{
     }
 }
 ```
-직렬화/역직렬화가 가능한 AlgorithmResponse 클래스이다. java.io.ObjectOutputStream 클래스를 이용하여 AlgorithmResponse 클래스를
-아래와 같이 직렬화할수 있다.
+직렬화/역직렬화가 가능한 AlgorithmResponse 클래스이다. java.io.ObjectOutputStream 클래스를 이용하여 AlgorithmResponse 클래스를 아래와 같이 직렬화할수 있다.
 
 ```java
 Algorithm algorithm;
@@ -59,7 +57,6 @@ try (ByteArrayInputStream bais = new ByteArrayInputStream(serializedMember)) {
 ```
 
 ## 3. 역직렬화 주의점
-
 ```java
 public class AlgorithmResponse implements Serializable{
     private Long id;
