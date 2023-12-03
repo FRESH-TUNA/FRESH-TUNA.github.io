@@ -83,6 +83,8 @@ ARG PROJECT_PYTHON_VERSION
 LABEL MAINTAINER="tunakim1004@gmail.com"
 WORKDIR     /app
 
+# /usr/local/lib is meant for libs that you installed (compiled) yourself. 
+# /usr/lib is for libraries your distribution provides.
 COPY --from=library_builder /usr/local/lib/python${PROJECT_PYTHON_VERSION}/site-packages /usr/lib/python${PROJECT_PYTHON_VERSION}/site-packages
 COPY ./ /app
 CMD ["python3", "manage.py", "runserver"]
