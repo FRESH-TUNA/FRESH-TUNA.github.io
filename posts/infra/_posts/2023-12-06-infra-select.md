@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "인프라 장비 업체 선정"
+title: "적절한 인프라 기술/장비 선택"
 # author: "DONGWON KIM"
 # meta: "Springfield"
 tags: [infra]
@@ -164,6 +164,53 @@ overcommit의 문제가 있으며 정확히 필요한 용량의 예측이 힘들
 - AWS cloudfront
 
 ## DSR 구성을 통한 부하분산
+
+- l4 스위치(로드밸런서)를 통한 부하분산을 하고, 서버에서 응답할때 는 l2 스위치를 사용하여 다이렉트하게 소스로 쏴주는 방식
+- 로드밸런서가 소스, dest를 변환하는 부하를 줄일수 있다. 이를 위해 로드밸런서가 서버에 요청을 할때 source ip 주소에 대한 정보를 전달한다. 현재는 많이 사용하지 않는다.
+- AWS ELB는 지원하지 않는다.
+
+## 클라우드
+
+### 서비스의 유형
+
+- IAAS (infrastructure as a service)
+    - 고객이 인프라를 구축하고 소프트웨어를 운영해야 한다.
+    - IAAS의 핵심은 가상머신 서비스이다.
+- PAAS
+    - 인프라는 준비되어있으며 소프트웨어만 가져오면 된다.
+- SAAS
+    - 소프트웨어 서비스를 제공한다.
+    - 최근에는 구독형 으로 서비스를 많이 제공한다.
+
+## openstack
+
+- 클라우드 컴퓨팅을 구현하기 위한 오픈소스다.
+- private, public, edge의 형태로 서비스가 가능하다.
+- qemu/kvm기반으로 동작
+- VM, bare metal, container 관리
+- 오픈스택위에 쿠버네티스, 쿠버네티스위에 오픈스택의 형태로 서비스가 가능하다.
+
+### openstack 주요 서비스
+
+- horizon(콘솔)
+- nova(컴퓨팅)
+- cinder(블록스토리지), swift(오브젝트 스토리지), manilar(파일스토리지)
+- glance(이미지)
+- keystone(IAM)
+- Neutron(VPC), Octavia(ELB)
+
+## kubernetes
+
+- 컨테이너 오케스트레이션 툴
+- cluster architecture (여러 노드의 그룹)
+- etcd(nosql): 콘피그 관리한다.
+- pod: container 배포 단위
+- kubelet: 각 노드당 api를 통해 컨트롤 플레인과 소통하기 위한 모듈
+- container engine: 도커, 팟맨, containerd(요즘 표준 기술)
+- cloud native network(컨테이너간 통신): calico, flannel, cilllium
+- cloud native storage(컨테이너에 스토리지 제공): ceph, gluster(nfs)
+- master: control plain 이자 워커 노드
+  
 
 - l4 스위치(로드밸런서)를 통한 부하분산을 하고, 서버에서 응답할때 는 l2 스위치를 사용하여 다이렉트하게 소스로 쏴주는 방식
 - 로드밸런서가 소스, dest를 변환하는 부하를 줄일수 있다. 이를 위해 로드밸런서가 서버에 요청을 할때 source ip 주소에 대한 정보를 전달한다. 현재는 많이 사용하지 않는다.
