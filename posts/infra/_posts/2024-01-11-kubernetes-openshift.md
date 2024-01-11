@@ -103,5 +103,6 @@ Source-to-Image (S2I) 를 통해 소스만 들고 오면 이미지 빌드도 해
 이는 컨테이너를 다루는 충분한 기술력을 갖추고 있는 회사 입장에서 보면, 유연하게 클러스터의 사양을 변경하고, 비용측면에서 불리할수 있다.
 
 ## 참고자료
-
-https://github.com/kubernetes/kubernetes/blob/master/logo/logo.svg
+- [https://icon-icons.com/icon/kubernetes-logo/168359](https://icon-icons.com/icon/kubernetes-logo/168359)
+- [https://icon-icons.com/icon/openshift-logo/169885](https://icon-icons.com/icon/openshift-logo/169885)
+- [https://www.dynatrace.com/news/blog/openshift-vs-kubernetes/](https://www.dynatrace.com/news/blog/openshift-vs-kubernetes/)
